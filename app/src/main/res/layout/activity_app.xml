@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <View
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="50dp"
+            android:maxWidth="50dp"
+            android:src="@drawable/ic_android"
+            android:transitionName="@string/transition_app_icon" />
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="App"
+            android:textColor="@color/white"
+            android:textSize="22dp" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_name"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center_horizontal"
+            android:text="ver"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="180dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_margin="5dp">
+
+            <ImageView
+                android:id="@+id/app_googleplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:adjustViewBounds="true"
+                android:maxHeight="30dp"
+                android:maxWidth="30dp"
+                android:src="@drawable/ic_googleplay" />
+
+            <TextView
+                android:id="@+id/app_apk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:text="com.mz.cn"
+                android:textColor="@color/text_primary" />
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout2">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/start_card"
+                style="@style/detail_card">
+
+                <TextView
+                    style="@style/detail_card_text1"
+                    android:text="@string/dialog_run" />
+
+                <TextView
+                    style="@style/detail_card_text2"
+                    android:text="Run this app now" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/extract_card"
+                style="@style/detail_card"
+                android:layout_below="@id/start_card">
+
+                <TextView
+                    style="@style/detail_card_text1"
+                    android:text="@string/dialog_run" />
+
+                <TextView
+                    style="@style/detail_card_text2"
+                    android:text="@string/dialog_extract_description" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/uninstall_card"
+                style="@style/detail_card"
+                android:layout_below="@id/extract_card">
+
+                <TextView
+                    style="@style/detail_card_text1"
+                    android:text="@string/dialog_uninstall" />
+
+                <TextView
+                    style="@style/detail_card_text2"
+                    android:text="@string/dialog_uninstall_description" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_below="@id/uninstall_card"
+                android:id="@+id/cache_card"
+                style="@style/detail_card"
+                >
+                <TextView
+                    style="@style/detail_card_text1"
+                    android:text="@string/dialog_cache"/>
+                <TextView
+                    style="@style/detail_card_text2"
+                    android:text="@string/dialog_cache_description" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_below="@id/cache_card"
+                android:id="@+id/clear_data_card"
+                style="@style/detail_card">
+                <TextView
+                    style="@style/detail_card_text1"
+                    android:text="@string/dialog_clear_data"/>
+                <TextView
+                    style="@style/detail_card_text2"
+                    android:text="@string/dialog_clear_data_description" />
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+   <!-- <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/fab"
+            layout="@layout/fab_mutiple"/>
+    </FrameLayout>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.FloatingActionButton
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_local_grocery_store_white"
+            android:layout_margin="16dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
